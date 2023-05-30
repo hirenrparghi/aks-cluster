@@ -1,0 +1,21 @@
+name: Build
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clean Workspace
+        run : |
+            curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
+            az --version
+            
+      - name: Az login
+        uses: azure/login@1.4.5
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+        
+        
