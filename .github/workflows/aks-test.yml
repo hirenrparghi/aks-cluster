@@ -5,17 +5,19 @@ on:
   pull_request:
     branches: [ main ]
 jobs:
-  publish:
+  aks_login:
     runs-on: ubuntu-latest
     steps:
+    
       - name: Clean Workspace
         run : |
             curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
             az --version
             
-      - name: Az login
-        uses: azure/login@1.4.6
+      - name: Azure Login
+        uses: Azure/login@v1.4.6
         with:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
+        
         
         
