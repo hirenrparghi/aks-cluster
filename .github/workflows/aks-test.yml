@@ -1,4 +1,5 @@
 name: AKS Login
+
 on:
   push:
     branches: [ main ]
