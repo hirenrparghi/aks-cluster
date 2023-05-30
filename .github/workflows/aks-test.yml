@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     
-      - name: Clean Workspace
+      - name: Install AZ CLI
         run : |
             curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
             az --version
