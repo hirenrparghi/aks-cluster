@@ -1,4 +1,4 @@
-name: Build
+name: AKS Login
 on:
   push:
     branches: [ main ]
@@ -14,7 +14,7 @@ jobs:
             az --version
             
       - name: Az login
-        uses: azure/login@1.4.5
+        uses: azure/login@1.4.6
         with:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
         
